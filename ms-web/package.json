@@ -4,7 +4,10 @@
   "description": "The web microservice of All-Play",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"webpack -w\" \"node server.js\"",
+    "build": "webpack --config ./webpack.config.js --progress --colors",
+    "start": "node server.js"
   },
   "keywords": [
     "Player"
@@ -17,7 +20,10 @@
     "concurrently": "^3.6.0",
     "css-loader": "^1.0.0",
     "express": "^4.16.3",
+    "http": "0.0.0",
     "jquery": "^3.3.1",
+    "method-override": "^3.0.0",
+    "morgan": "^1.9.0",
     "node-sass": "^4.9.2",
     "popper.js": "^1.14.3",
     "postcss-loader": "^2.1.6",
@@ -25,7 +31,8 @@
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
     "sass-loader": "^7.0.3",
-    "style-loader": "^0.21.0"
+    "style-loader": "^0.21.0",
+    "winston": "^3.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
